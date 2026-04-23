@@ -1,0 +1,143 @@
+.footer {
+  background: var(--color-text);
+  padding: 72px 0 32px;
+}
+
+.container {
+  width: var(--container);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* ─── TOP ─── */
+.top {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.dot {
+  color: var(--color-primary);
+}
+
+.tagline {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.50);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.social:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* COLS */
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.colHeading {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.40);
+  text-transform: uppercase;
+}
+
+.colLinks {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.colLink {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.colLink:hover {
+  color: var(--color-primary);
+}
+
+/* ─── BOTTOM ─── */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28px;
+}
+
+.copy {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+}
+
+.legalLink {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.30);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legalLink:hover {
+  color: rgba(255, 255, 255, 0.60);
+}
