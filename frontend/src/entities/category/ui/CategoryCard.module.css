@@ -1,0 +1,37 @@
+.card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: #1c1c1c;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: scale(1.018);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.30);
+}
+
+/* ─── OVERLAY ─── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  transition: background 0.3s ease;
+  border-radius: inherit;
+}
+
+.card:hover .overlay {
+  background: var(--color-overlay-hover);
+}
+
+/* ─── CONTENT ─── */
+.content {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  z-index: 2;
+}

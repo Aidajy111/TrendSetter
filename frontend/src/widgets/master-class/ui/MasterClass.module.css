@@ -1,0 +1,122 @@
+.section {
+  padding: 100px 0;
+  background: var(--color-text);
+  overflow: hidden;
+}
+
+.container {
+  width: var(--container);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ─── LEFT ─── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tag {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.05;
+}
+
+.desc {
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.60);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+}
+
+.list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ─── RIGHT ─── */
+.right {
+  position: relative;
+}
+
+.imageWrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.04);
+}
+
+/* ─── BADGE ─── */
+.badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badgeNum {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.badgeText {
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+  font-weight: 700;
+}

@@ -1,0 +1,50 @@
+.section {
+  padding: 72px 0;
+  background: var(--color-bg-light);
+}
+
+.container {
+  width: var(--container);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+/* ─── HEADER ─── */
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.tag {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  font-weight: 900;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.desc {
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  text-align: right;
+  max-width: 340px;
+}
+
+/* ─── GRID ─── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}

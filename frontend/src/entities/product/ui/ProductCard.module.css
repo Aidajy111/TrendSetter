@@ -1,0 +1,67 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── IMAGE ─── */
+.imageWrap {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 3 / 4;
+  background: var(--color-bg-light);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.06);
+}
+
+/* ─── INFO ─── */
+.info {
+  padding: 16px 4px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.designer {
+  font-size: var(--fs-xs);
+  color: var(--color-text-light);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.name {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+/* ghost кнопка с розовым цветом — из Button variant="ghost" */
+.btn {
+  margin-top: 8px;
+  align-self: flex-start;
+  padding-left: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 2px solid var(--color-primary) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  color: var(--color-primary) !important;
+  font-size: var(--fs-xs) !important;
+  letter-spacing: 0.8px;
+}
+
+.btn:hover {
+  background: transparent !important;
+  opacity: 0.75;
+}
