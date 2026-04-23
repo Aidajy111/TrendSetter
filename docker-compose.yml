@@ -1,0 +1,66 @@
+version: '3.8'
+services:
+  # база данных для Strapi 
+  posgres: 
+    image: postgres:15
+    container_name: trendsetter_db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - trendsetter_network
+
+  strapi: 
+    build: ./strapi-cms
+    container_name: trendsetter_cms
+    restart: always
+    environment:
+      DATABASE_CLIENT: ${DB_CLIENT}
+      DATABASE_HOST: db
+      DATABASE_PORT: ${DB_PORT}
+      DATABASE_NAME: ${DB_NAME}
+      DATABASE_USERNAME: ${DB_USER}
+      DATABASE_PASSWORD: ${DB_PASSWORD}
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+    ports:
+      - "4444:1337"
+    depends_on:
+      - db
+    networks:
+      - trendsetter_network
+  
+  go-tryon:
+    build: ./go-tryon-service
+    ports:
+      - "2222:2222"
+    env_file:
+      - ./go-tryon-service/.env
+    networks:
+      - trendsetter_network
+
+  client:
+    build: ./frontend
+    container_name: trendsetter_client
+    restart: always
+    environment:
+      REACT_APP_API_URL: ${REACT_APP_API_URL}
+    ports:
+      - "3000:80"
+    depends_on:
+      - strapi
+    networks:
+      - trendsetter_network
+
+volumes:
+  pgdata:
+
+networks:
+  trendsetter_network:
+    driver: bridge

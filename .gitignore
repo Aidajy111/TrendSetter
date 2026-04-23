@@ -1,0 +1,23 @@
+# === Frontend ===
+frontend/node_modules/
+frontend/build/
+frontend/.env/
+
+# === Strapi CMS ===
+strapi-cms/node_modules/
+strapi-cms/.strapi/
+strapi-cms/.cache/
+strapi-cms/build/
+strapi-cms/dist/
+
+# === Go Service ===
+go-tryon-service/vendor/
+go-tryon-service/*.exe
+go-tryon-service/*.test
+go-tryon-service/tmp/
+go-tryon-service/.env
+
+# === Общие для всех ===
+.DS_Store
+*.log
+.env
