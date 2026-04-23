@@ -4,7 +4,7 @@ FROM golang:1.25.3 AS builder
 WORKDIR /app
 
 # Копируем файлы зависимостей и скачиваем их
-COPY go.mod go.sum ./
+COPY go.mod go.sum* ./
 RUN go mod download
 
 # Копируем весь остальной код
