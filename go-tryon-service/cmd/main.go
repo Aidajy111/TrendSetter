@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/Aidajy111/TrendSetter/internal/client/genapi"
+	"github.com/Aidajy111/TrendSetter/internal/client/s3"
 	"github.com/Aidajy111/TrendSetter/internal/client/strapi"
 	"github.com/Aidajy111/TrendSetter/internal/server"
 	"github.com/Aidajy111/TrendSetter/internal/service"
@@ -40,11 +41,11 @@ func main() {
 	strapiURL := flag.String("strapi_url", "http://localhost:1337", "Base URL for Strapi CMS")
 	flag.Parse()
 
-	getClient := genapi.NewClient(*genApiKey)
-	// s3ClientObj := s3.NewClient(*s3Endpoint) // Сделаешь по аналогии
+	genAPIClient := genapi.NewClient(*genApiKey)
+	s3ClientObj := s3.NewClient(*s3Client)
 	strapiClientObj := strapi.NewClient(*strapiURL)
 
-	service := service.NewTryOnService(getClient, nil, strapiClientObj)
+	service := service.NewTryOnService(genAPIClient, s3ClientObj, strapiClientObj)
 	srv := server.NewServer(r, port)
 	handler := transport.NewHandler(service)
 
