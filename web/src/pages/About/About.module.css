@@ -1,0 +1,293 @@
+.about {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 46px 0 92px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.heroMedia,
+.heroText,
+.mission,
+.principles article,
+.teamIntro,
+.teamCards article,
+.finalBlock {
+  border-radius: 28px;
+}
+
+.heroMedia {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.heroMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroMedia::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, .58));
+  content: "";
+}
+
+.heroMedia div {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  z-index: 1;
+  color: var(--color-white);
+}
+
+.heroMedia span,
+.heroText > span,
+.mission span,
+.teamIntro span,
+.finalBlock span {
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.heroMedia b {
+  display: block;
+  margin-top: 8px;
+  font-size: 34px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.heroText {
+  padding: 54px;
+  background: var(--color-white);
+  display: grid;
+  align-content: center;
+}
+
+.heroText h1 {
+  margin-top: 14px;
+  color: var(--color-ink);
+  font-size: 52px;
+  line-height: 1.02;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.heroText p,
+.mission p,
+.principles p,
+.teamCards p,
+.finalBlock p {
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.heroText p {
+  margin-top: 20px;
+}
+
+.socials,
+.finalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.socials a,
+.socials a:visited,
+.socials a:active,
+.socials a:hover,
+.finalLinks a,
+.teamIntro a {
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.socials a:first-child,
+.finalLinks a:first-child,
+.teamIntro a {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.socials a:nth-child(2),
+.socials a:nth-child(3),
+.finalLinks a:nth-child(2) {
+  border: 1px solid var(--color-border);
+  color: var(--color-ink);
+  background: var(--color-white);
+}
+
+.mission {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 32px;
+  margin-top: 30px;
+  padding: 36px;
+  background: var(--color-dark);
+}
+
+.mission h2,
+.teamIntro h2,
+.finalBlock h2 {
+  margin-top: 12px;
+  color: var(--color-white);
+  font-size: 38px;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.mission p {
+  align-self: center;
+  color: rgba(255, 255, 255, .72);
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.principles article,
+.teamCards article {
+  padding: 28px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.principles svg {
+  color: var(--color-accent);
+}
+
+.principles h3,
+.teamCards h3 {
+  margin-top: 18px;
+  color: var(--color-ink);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.principles p,
+.teamCards p {
+  margin-top: 10px;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.teamIntro {
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.teamIntro img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.teamIntro div {
+  padding: 28px;
+}
+
+.teamIntro a {
+  margin-top: 22px;
+}
+
+.teamCards {
+  display: grid;
+  gap: 18px;
+}
+
+.teamCards h3 {
+  margin-top: 0;
+}
+
+.teamCards span {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-accent);
+  font-weight: 900;
+}
+
+.finalBlock {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 34px;
+  padding: 24px;
+  background: var(--color-white);
+}
+
+.finalBlock img {
+  width: 100%;
+  height: 340px;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.finalBlock h2 {
+  color: var(--color-ink);
+}
+
+.finalBlock p {
+  margin-top: 14px;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .mission,
+  .principles,
+  .team,
+  .finalBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .heroText h1,
+  .mission h2,
+  .teamIntro h2,
+  .finalBlock h2 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about {
+    width: min(100% - 24px, var(--container));
+    padding-top: 28px;
+  }
+
+  .heroText,
+  .mission {
+    padding: 26px;
+  }
+
+  .heroMedia {
+    min-height: 380px;
+  }
+}

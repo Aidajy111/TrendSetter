@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-label="Pink designer bomber jacket product">
+  <rect width="760" height="760" rx="42" fill="#fff"/>
+  <ellipse cx="380" cy="655" rx="220" ry="28" fill="#f0e9ec"/>
+  <path d="M238 170c84-46 206-48 292 0l88 335c-55 54-115 81-180 82l-18-236h-80l-18 236c-68-1-128-28-180-82z" fill="#f1dce4"/>
+  <path d="M239 171c35 34 68 51 101 58l-18 358c-71-6-132-35-180-82z" fill="#f3296f"/>
+  <path d="M522 171c-35 34-68 51-102 58l18 358c72-6 132-35 180-82z" fill="#c7b39c"/>
+  <path d="M340 229h80v352h-80z" fill="#fff6f8"/>
+  <path d="M312 196l68 66 68-66" fill="none" stroke="#11131a" stroke-width="28" stroke-linecap="round"/>
+  <path d="M244 542h100M417 542h100" stroke="#11131a" stroke-width="28" stroke-linecap="round"/>
+  <path d="M170 505l-50 70M590 505l50 70" stroke="#11131a" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="380" cy="320" r="10" fill="#b47b49"/>
+  <circle cx="380" cy="396" r="10" fill="#b47b49"/>
+  <circle cx="380" cy="472" r="10" fill="#b47b49"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" role="img" aria-label="Glamour fashion fitting">
+  <defs>
+    <linearGradient id="glam" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4eee4"/>
+      <stop offset=".45" stop-color="#d9cfbd"/>
+      <stop offset="1" stop-color="#c9a842"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="760" fill="url(#glam)"/>
+  <rect x="560" y="0" width="96" height="760" fill="#8f7a29" opacity=".45"/>
+  <path d="M520 115c66 120 89 280 72 505" fill="none" stroke="#87693a" stroke-width="8"/>
+  <circle cx="344" cy="192" r="58" fill="#f0b49d"/>
+  <path d="M278 174c16-92 120-108 162-42 13 20 16 48 7 84-64-34-118-45-169-42z" fill="#f3296f"/>
+  <rect x="315" y="238" width="56" height="55" rx="25" fill="#e7a185"/>
+  <path d="M205 322c92-92 225-90 315-2l48 310H170z" fill="#efe8dd"/>
+  <path d="M205 322c75 48 184 54 315-2l-48 310H246z" fill="#f5d660" opacity=".58"/>
+  <path d="M193 350c-58 70-88 145-102 230l75 22c28-73 61-142 102-207z" fill="#f1ece2"/>
+  <path d="M524 350c62 70 96 145 110 230l-77 22c-30-77-65-149-107-210z" fill="#f1ece2"/>
+  <rect x="210" y="624" width="300" height="136" rx="60" fill="#efe8dd"/>
+</svg>

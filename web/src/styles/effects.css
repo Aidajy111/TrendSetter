@@ -1,0 +1,13 @@
+.hover-lift {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.soft-card {
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}

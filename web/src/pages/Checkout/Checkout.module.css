@@ -1,0 +1,565 @@
+.page {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 44px 0 72px;
+}
+
+.hero,
+.panel,
+.summaryPanel,
+.success {
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 18px 44px rgba(18, 21, 30, .07);
+}
+
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 200px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 84% 12%, rgba(243, 41, 111, .16), transparent 28%),
+    linear-gradient(135deg, #ffffff, #f8f8f9);
+}
+
+.hero p,
+.panelTitle p,
+.summaryHead p {
+  margin: 0 0 7px;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 900;
+  line-height: .94;
+  text-transform: uppercase;
+}
+
+.hero span {
+  display: block;
+  max-width: 680px;
+  margin-top: 14px;
+  color: var(--color-muted);
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.hero svg {
+  color: var(--color-accent);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  gap: 22px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+.main {
+  display: grid;
+  gap: 18px;
+}
+
+.panel,
+.summaryPanel {
+  padding: 22px;
+}
+
+.panelTitle,
+.summaryHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.panelTitle h2,
+.summaryHead h2 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.panelTitle svg,
+.summaryHead svg {
+  color: var(--color-accent);
+}
+
+.cityRow,
+.deliveryTabs,
+.paymentGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cityRow button,
+.deliveryTabs button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0 16px;
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 900;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.activeChip,
+.activeDelivery {
+  border-color: var(--color-accent) !important;
+  background: #fff0f5 !important;
+  color: var(--color-accent) !important;
+}
+
+.cityRow button:hover,
+.deliveryTabs button:hover,
+.points button:hover,
+.paymentGrid button:hover {
+  transform: translateY(-2px);
+}
+
+.deliveryTabs {
+  margin-top: 16px;
+}
+
+.pickupGrid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.points {
+  display: grid;
+  gap: 10px;
+}
+
+.points button {
+  display: grid;
+  gap: 5px;
+  min-height: 96px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 14px;
+  background: #fbfbfc;
+  color: var(--color-ink);
+  text-align: left;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.points strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.points span,
+.points small,
+.courierBox p,
+.paymentGrid span,
+.cartList span,
+.cartList small {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.activePoint {
+  border-color: rgba(243, 41, 111, .45) !important;
+  background: #fff0f5 !important;
+}
+
+.map {
+  position: relative;
+  min-height: 342px;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .72) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, .72) 1px, transparent 1px),
+    radial-gradient(circle at 30% 35%, rgba(243, 41, 111, .16), transparent 24%),
+    linear-gradient(135deg, #eceff3, #dfe5ec);
+  background-size: 42px 42px, 42px 42px, auto, auto;
+}
+
+.map::before,
+.map::after {
+  position: absolute;
+  border-radius: var(--radius-pill);
+  background: rgba(27, 30, 41, .13);
+  content: "";
+}
+
+.map::before {
+  width: 75%;
+  height: 16px;
+  left: 10%;
+  top: 47%;
+  transform: rotate(-18deg);
+}
+
+.map::after {
+  width: 18px;
+  height: 82%;
+  left: 58%;
+  top: 8%;
+  transform: rotate(18deg);
+}
+
+.mapPoint {
+  position: absolute;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  border: 4px solid var(--color-white);
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 10px 24px rgba(243, 41, 111, .35);
+  transform: translate(-50%, -50%);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.mapPointActive {
+  background: var(--color-ink);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.mapCard {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  display: grid;
+  gap: 5px;
+  width: min(260px, calc(100% - 36px));
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 20px;
+  padding: 16px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(14px);
+}
+
+.mapCard strong {
+  color: var(--color-ink);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.mapCard span,
+.mapCard small {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.courierBox {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.courierBox label {
+  display: grid;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.courierBox input,
+.commentInput {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: #fbfbfc;
+  color: var(--color-ink);
+  outline: none;
+}
+
+.courierBox input {
+  height: 48px;
+  padding: 0 15px;
+}
+
+.commentInput {
+  min-height: 132px;
+  resize: vertical;
+  padding: 16px;
+  font-weight: 750;
+}
+
+.courierBox input:focus,
+.commentInput:focus {
+  border-color: var(--color-accent);
+  background: var(--color-white);
+}
+
+.paymentGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.paymentGrid button {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  min-height: 126px;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  padding: 18px;
+  background: #fbfbfc;
+  color: var(--color-ink);
+  text-align: left;
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.paymentGrid svg {
+  color: var(--color-accent);
+}
+
+.paymentGrid strong {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.activePayment {
+  border-color: rgba(243, 41, 111, .45) !important;
+  background: #fff0f5 !important;
+}
+
+.summaryPanel {
+  position: sticky;
+  top: 136px;
+}
+
+.cartList {
+  display: grid;
+  gap: 12px;
+  max-height: 390px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.cartList article {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 10px;
+  background: #fbfbfc;
+}
+
+.cartList img {
+  width: 66px;
+  height: 66px;
+  border-radius: 16px;
+  background: var(--color-white);
+  object-fit: contain;
+}
+
+.cartList h3 {
+  margin: 0 0 4px;
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.cartList strong {
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.qty {
+  display: inline-grid;
+  grid-template-columns: 24px 26px 24px;
+  align-items: center;
+  width: max-content;
+  margin-top: 7px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+}
+
+.qty button {
+  height: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font-weight: 900;
+}
+
+.qty b {
+  text-align: center;
+  font-size: 12px;
+}
+
+.totalBox {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 18px;
+}
+
+.totalBox span,
+.totalBox strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.totalBox span {
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.totalBox strong {
+  color: var(--color-ink);
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.submit,
+.success a {
+  display: inline-flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 900;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.submit:hover,
+.success a:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+.success {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 76px 24px;
+  text-align: center;
+}
+
+.success svg {
+  color: var(--color-success);
+}
+
+.success p {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.success h1 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.success span {
+  max-width: 540px;
+  color: var(--color-muted);
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.success div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.success a {
+  width: auto;
+  min-width: 180px;
+  padding: 0 22px;
+}
+
+.success a:last-child {
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+@media (max-width: 1120px) {
+  .layout,
+  .pickupGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    width: calc(100% - 24px);
+    padding-top: 28px;
+  }
+
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .paymentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cartList article {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .cartList strong {
+    grid-column: 2;
+  }
+}

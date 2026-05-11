@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Streetwear model in yellow designer jacket">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f201d"/>
+      <stop offset=".55" stop-color="#d4c8b7"/>
+      <stop offset="1" stop-color="#f1efe8"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dca723"/>
+      <stop offset="1" stop-color="#f4c43c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="130" y="95" width="260" height="310" rx="8" fill="#fff8ef" opacity=".42"/>
+  <rect x="165" y="130" width="140" height="95" rx="4" fill="#c86d45" opacity=".45"/>
+  <rect x="285" y="260" width="46" height="46" fill="#28382e" opacity=".6"/>
+  <rect x="410" y="0" width="520" height="760" fill="#f7f3ec" opacity=".52"/>
+  <circle cx="650" cy="165" r="62" fill="#a56a4e"/>
+  <path d="M584 146c38-78 138-54 157 8-48-13-111-8-157-8z" fill="#9a2636"/>
+  <rect x="610" y="215" width="82" height="70" rx="34" fill="#b97859"/>
+  <path d="M462 298c130-72 275-74 396 0l-42 330H507z" fill="url(#jacket)"/>
+  <path d="M540 306h220v322H540z" fill="#fff4e8" opacity=".95"/>
+  <path d="M470 342c-52 64-86 140-104 226l82 18c31-72 62-141 92-207z" fill="#d9a11d"/>
+  <path d="M850 342c58 67 94 147 112 238l-84 19c-31-76-65-150-105-220z" fill="#d9a11d"/>
+  <rect x="482" y="335" width="342" height="110" rx="6" fill="#efbd38"/>
+  <rect x="512" y="360" width="112" height="66" rx="3" fill="#c78a14" opacity=".75"/>
+  <rect x="696" y="360" width="112" height="66" rx="3" fill="#c78a14" opacity=".75"/>
+  <circle cx="650" cy="356" r="8" fill="#1b1d28"/>
+  <circle cx="650" cy="442" r="8" fill="#1b1d28"/>
+  <circle cx="650" cy="528" r="8" fill="#1b1d28"/>
+  <path d="M523 628h272l24 132H500z" fill="#8b5a24"/>
+  <path d="M550 635h80l-9 125h-92zM694 635h80l26 125h-90z" fill="#7c4c22"/>
+  <rect x="246" y="438" width="92" height="212" rx="16" fill="#e0ac27" opacity=".9"/>
+  <rect x="923" y="102" width="122" height="520" fill="#ffffff" opacity=".26"/>
+</svg>
