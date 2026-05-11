@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Fashion designer in camel coat">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9d0c5"/>
+      <stop offset="1" stop-color="#f5f0eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#room)"/>
+  <ellipse cx="420" cy="875" rx="410" ry="155" fill="#e1dcd6"/>
+  <rect x="80" y="760" width="710" height="270" rx="135" fill="#fff" opacity=".55"/>
+  <rect x="120" y="915" width="680" height="110" rx="20" fill="#ede5db"/>
+  <circle cx="465" cy="250" r="86" fill="#d39b78"/>
+  <path d="M382 226c22-102 154-105 196-15-45-18-122-15-196 15z" fill="#5e392f"/>
+  <path d="M295 385c82-84 264-89 350 0l78 500H228z" fill="#a46a43"/>
+  <path d="M365 395h190l-42 490H405z" fill="#10131d"/>
+  <path d="M292 430c-68 74-102 168-112 288l90 10c26-104 56-196 95-273z" fill="#9a623e"/>
+  <path d="M647 432c77 84 113 190 119 315l-95 10c-22-116-57-217-108-302z" fill="#9a623e"/>
+  <rect x="610" y="595" width="132" height="90" rx="10" fill="#f4f0ea"/>
+  <rect x="635" y="620" width="80" height="8" rx="4" fill="#d0c2b3"/>
+  <rect x="635" y="642" width="62" height="8" rx="4" fill="#d0c2b3"/>
+  <path d="M392 885h92v315h-92zM530 885h96v315h-96z" fill="#1c1f29"/>
+  <rect x="160" y="895" width="210" height="12" rx="6" fill="#cc526f"/>
+  <rect x="400" y="895" width="120" height="12" rx="6" fill="#e7be56"/>
+  <rect x="550" y="895" width="170" height="12" rx="6" fill="#5c7695"/>
+</svg>

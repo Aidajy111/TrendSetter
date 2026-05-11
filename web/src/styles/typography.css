@@ -1,0 +1,26 @@
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.section-kicker {
+  margin-top: 6px;
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.price {
+  color: var(--color-ink);
+  font-weight: 800;
+}
+
+.old-price {
+  color: #aaa;
+  font-weight: 700;
+  text-decoration: line-through;
+}

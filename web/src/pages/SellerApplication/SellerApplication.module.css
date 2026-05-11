@@ -1,0 +1,318 @@
+.page {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 44px 0 78px;
+}
+
+.hero,
+.panel,
+.approvedBar,
+.submitPanel,
+.demoPanel {
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 230px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 86% 12%, rgba(243, 41, 111, .16), transparent 28%),
+    linear-gradient(135deg, #fff, #f8f8f9);
+}
+
+.hero p,
+.panelTitle p {
+  margin: 0 0 7px;
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 900;
+  line-height: .94;
+  text-transform: uppercase;
+}
+
+.hero span {
+  display: block;
+  max-width: 650px;
+  margin-top: 14px;
+  color: var(--color-muted);
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.statusCard {
+  display: grid;
+  min-width: 250px;
+  gap: 8px;
+  border-radius: 24px;
+  padding: 22px;
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.statusCard svg {
+  color: var(--color-accent);
+}
+
+.statusCard span,
+.statusCard small {
+  color: rgba(255, 255, 255, .7);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.statusCard strong {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.panel {
+  padding: 24px;
+}
+
+.panelTitle {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.panelTitle svg {
+  color: var(--color-accent);
+}
+
+.panelTitle h2 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.typeGrid,
+.categoryGrid,
+.docsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.typeGrid button,
+.categoryGrid button,
+.demoPanel button {
+  min-height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0 15px;
+  background: #fbfbfc;
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.selected {
+  border-color: var(--color-accent) !important;
+  background: #fff0f5 !important;
+  color: var(--color-accent) !important;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.fieldGrid label,
+.fullField {
+  display: grid;
+  gap: 8px;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.fieldGrid input,
+.fieldGrid textarea {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 17px;
+  background: #fbfbfc;
+  color: var(--color-ink);
+  font-weight: 800;
+  outline: none;
+}
+
+.fieldGrid input {
+  height: 48px;
+  padding: 0 14px;
+}
+
+.fieldGrid textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding: 14px;
+}
+
+.fieldGrid input:focus,
+.fieldGrid textarea:focus {
+  border-color: var(--color-accent);
+  background: var(--color-white);
+}
+
+.fullField {
+  grid-column: 1 / -1;
+}
+
+.fieldLabel {
+  color: var(--color-muted);
+}
+
+.docsGrid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.fileBox {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  min-height: 128px;
+  border: 1px dashed rgba(243, 41, 111, .42);
+  border-radius: 22px;
+  padding: 16px;
+  background: #fff8fb;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.fileBox svg {
+  color: var(--color-accent);
+}
+
+.fileBox span {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.fileBox b {
+  align-self: end;
+  overflow: hidden;
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileBox input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.approvedBar,
+.submitPanel,
+.demoPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 18px;
+  padding: 20px;
+}
+
+.approvedBar strong,
+.submitPanel strong,
+.demoPanel strong {
+  display: block;
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.approvedBar span,
+.submitPanel span,
+.demoPanel span {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.approvedBar a,
+.submitPanel button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 0 20px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.demoPanel div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1060px) {
+  .typeGrid,
+  .docsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .page {
+    width: calc(100% - 24px);
+    padding-top: 28px;
+  }
+
+  .hero,
+  .approvedBar,
+  .submitPanel,
+  .demoPanel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .fieldGrid,
+  .typeGrid,
+  .docsGrid {
+    grid-template-columns: 1fr;
+  }
+}

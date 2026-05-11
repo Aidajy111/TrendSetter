@@ -1,0 +1,46 @@
+.authPage {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 28px;
+  background: var(--color-bg);
+}
+
+.card {
+  display: grid;
+  width: min(460px, 100%);
+  gap: 24px;
+  padding: 42px;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.logo {
+  color: var(--color-ink);
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.card h1 {
+  color: var(--color-ink);
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.switch {
+  color: var(--color-accent);
+  font-weight: 800;
+  text-align: center;
+}
