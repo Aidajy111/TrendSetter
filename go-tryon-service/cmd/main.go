@@ -13,6 +13,7 @@ import (
 	"github.com/Aidajy111/TrendSetter/internal/client/genapi"
 	"github.com/Aidajy111/TrendSetter/internal/client/s3"
 	"github.com/Aidajy111/TrendSetter/internal/client/strapi"
+	"github.com/Aidajy111/TrendSetter/internal/middleware"
 	"github.com/Aidajy111/TrendSetter/internal/server"
 	"github.com/Aidajy111/TrendSetter/internal/service"
 	"github.com/Aidajy111/TrendSetter/internal/transport"
@@ -49,7 +50,7 @@ func main() {
 	srv := server.NewServer(r, port)
 	handler := transport.NewHandler(service)
 
-	r.POST("/api/try-on", handler.CreateImage)
+	r.POST("/api/try-on", middleware.Auth(secretKey), handler.CreateImage)
 
 	// канал для gracefil shutdown
 	stop := make(chan os.Signal, 1)

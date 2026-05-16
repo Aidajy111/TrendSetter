@@ -35,5 +35,12 @@ func (s *TryOnService) ProcessTryOn(imageUser multipart.File, prompt string, pro
 	// 2. Вызываем GenAPI для генерации изображения
 	// 3. Сохраняем сгенерированное изображение в S3 и получаем URL
 	// 4. Возвращаем URL клиенту
+
+	// 1. Получаем 2 картинки и промпт для генерации от GenAPI
+	urlImageProduct, desc, err := s.strapiClient.GetProductData(productID)
+	if err != nil {
+		return "", err
+	}
+
 	return "", nil
 }

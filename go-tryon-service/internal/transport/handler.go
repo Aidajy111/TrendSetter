@@ -7,6 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const maxUserImageBytes = 10 << 20 // 10 MiB
+
 type Handler struct {
 	tryonService *service.TryOnService
 }
@@ -17,57 +19,58 @@ func NewHandler(tryonService *service.TryOnService) *Handler {
 	}
 }
 
-func (s *Handler) CreateImage(c *gin.Context) {
-	// =====================================================================
-	// ОЖИДАЕМЫЙ ЗАПРОС ОТ ФРОНТЕНДА:
-	// Формат: multipart/form-data (не JSON!)
-	// Заголовки (Headers):
-	//   Authorization: Bearer <JWT_TOKEN_ПОЛЬЗОВАТЕЛЯ>
-	//
-	// Тело (Body):
-	//   user_image: [Бинарный файл картинки .jpg/.png]
-	//   product_id: "1234" (ID товара из базы Strapi)
-	//   prompt: "на фоне неонового ночного города в стиле киберпанк" (опционально)
-	//
-	// ЧЕГО ТУТ НЕТ И НЕ ДОЛЖНО БЫТЬ:
-	// - user_id (Его фронт не шлет напрямую. Мы сами достанем user_id из JWT-токена для безопасности)
-	// - count (Баланс проверяется на бэкенде через Strapi, фронтенду мы не доверяем)
-	// =====================================================================
-
-	// 1. ПРОВЕРКА АВТОРИЗАЦИИ (MiddleWare)
-	// Предполагается, что до входа в эту функцию отработал middleware Gin,
-	// который проверил JWT токен и положил ID пользователя в контекст.
-	// userID := c.GetString("userID")
-
-	// 2. ПАРСИНГ ВХОДНЫХ ДАННЫХ
-	// productID := c.PostForm("product_id")
-	// userPrompt := c.PostForm("prompt") // Если пусто - ничего страшного, сервис подставит дефолтный
-	// userImage, err := c.FormFile("user_image")
-
-	// 3. ВАЛИДАЦИЯ
-	// Проверяем, что картинка и product_id точно пришли. Если нет - отбиваем ошибку 400.
-
-	// 4. ПЕРЕДАЧА В SERVICE (Слой бизнес-логики)
-	// resultURL, err := h.tryonService.ProcessTryOn(userImage, userPrompt, productID, userID)
-
-	// 5. ОТВЕТ ФРОНТЕНДУ (Возвращаем URL готовой картинки)
-	// c.JSON(http.StatusOK, gin.H{
-	// 	"status": "success",
-	// 	"result_url": resultURL,
-	// })
-
-	productId := c.PostForm("product_id")
-	userPrompt := c.PostForm("prompt")
-	userImage, err := c.FormFile("user_image")
-	if err != nil {
-		return err.Error(err)
+// CreateImage принимает multipart/form-data: user_image, product_id, prompt (опционально).
+// Authorization: Bearer <JWT> - проверяется middleware Auth.
+func (h *Handler) CreateImage(c *gin.Context) {
+	userID := c.GetString("userID")
+	if userID == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{
+			"error": "unauthorized",
+		})
+		return
 	}
 
-	test := c.Request.Body.Read()
+	productID := c.PostForm("product_id")
+	if productID == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "product_id is required",
+		})
+		return
+	}
 
-	imagrUrl, err := s.tryonService.ProcessTryOn()
+	userPrompt := c.PostForm("prompt")
 
-	resultURL := ""
+	fileHeader, err := c.FormFile("user_image")
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "user_image is required",
+		})
+		return
+	}
+
+	if fileHeader.Size > maxUserImageBytes {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "user_image is too large",
+		})
+		return
+	}
+
+	userImage, err := fileHeader.Open()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "failed to read user_image",
+		})
+		return
+	}
+	defer userImage.Close()
+
+	resultURL, err := h.tryonService.ProcessTryOn(userImage, userPrompt, productID, userID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": err.Error(),
+		})
+		return
+	}
 
 	c.JSON(http.StatusOK, gin.H{
 		"status":     "success",
